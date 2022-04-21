@@ -1,9 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project2-deployment  
+  name: project2-deployment 
+  namespace: teamww
+  labels:
+    name: project2-app 
 spec:  
-  replicas: 3
+  replicas: 2
+  minReadySeconds: 5
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   selector:
     matchLabels:
       app: project2-app
@@ -35,5 +44,11 @@ spec:
           - name: DB_PASS
             value: pass
           # could add an env var for spring profile value: prod
+      volumeMounts:
+          - mountPath: /logs
+            name: logs
+      volumes:
+        - name: logs
+          emptyDir: {}
 
  
