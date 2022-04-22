@@ -1,11 +1,34 @@
+# spring:
+#   datasource:
+#     url: jdbc:postgresql://postgres-service:5432/postgres
+#     username: postgres
+#     password: pass
+# #     url: ${DB_URL_SHOP} 
+# #     username: ${DB_USER_SHOP}
+# #     password: ${DB_PASS_SHOP}
+#   jpa:
+#     show-sql: true
+#     database-platform: org.hibernate.dialect.PostgreSQLDialect
+#     defer-datasource-initialization: true
+#     hibernate:
+#       ddl-auto: validate
+   
 spring:
   datasource:
-    url: ${DB_URL_SHOP}
-    username: ${DB_USER_SHOP}
-    password: ${DB_PASS_SHOP}
+    url: jdbc:h2:mem:dbtest
+    username: sa
+    password: pass
   jpa:
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create
+
+
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
