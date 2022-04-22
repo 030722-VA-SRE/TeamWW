@@ -1,6 +1,10 @@
 package com.revature.exceptions;
 
-public class AuthenticationException extends RuntimeException {
+public class AuthenticationException extends RuntimeException{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public AuthenticationException() {
 		super();
@@ -27,7 +31,5 @@ public class AuthenticationException extends RuntimeException {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 }
