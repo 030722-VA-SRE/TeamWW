@@ -11,12 +11,12 @@ spec:
     ports:
       - containerPort: 5432
     env:
-  #    - name: POSTGRES_USER
-   #     value: postgres
+      - name: POSTGRES_USER
+        value: postgres
       - name: POSTGRES_PASSWORD
         value: pass
-    #  - name: POSTGRES_URL
-     #   value: jdbc:postgresql://postgres:5432/postgres
+      - name: POSTGRES_URL
+        value: jdbc:postgresql://postgres:5432/postgres
       - name: PGDATA
         value: /var/lib/postgresql/data/pgdata
     volumeMounts:
