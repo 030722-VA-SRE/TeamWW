@@ -44,7 +44,7 @@ spec:
           - name: DB_PASS
             value: pass
           # could add an env var for spring profile value: prod
-      volumeMounts:
+        volumeMounts:
           - mountPath: /logs
             name: logs
       volumes:

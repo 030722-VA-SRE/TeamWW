@@ -11,17 +11,17 @@ spec:
    - http:
        paths:
        - pathType: Prefix
-         path: "/project2/(.*)"
+         path: "/teamww/(.*)"
          backend:
            service:
              name: project2-service
              port: 
                number: 8080
-       - pathType: Prefix
-         path: "/grafana/?(.*)"
-         backend:
-          service:
-            name: prom-grafana
-            port: 
-              number: 80
+      #  - pathType: Prefix
+      #    path: "/grafana/?(.*)"
+      #    backend:
+      #     service:
+      #       name: prom-grafana
+      #       port: 
+      #         number: 80
  
