@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: project2-container
-        image: jorgemongelos/project2:v1.2 
+        image: jorgemongelos/project2:latest 
         # imagePullPolicy: Never
         # restartPolicy: never
         ports:
