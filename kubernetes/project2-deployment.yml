@@ -55,7 +55,7 @@ spec:
         - -config.file=/etc/promtail/promtail.yml
         volumeMounts:
         - name: logs
-          mountPath: /logs
+          mountPath: /logsadd
         - name: promtail-config
           mountPath: /etc/promtail
       volumes:
