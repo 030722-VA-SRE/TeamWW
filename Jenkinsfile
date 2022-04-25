@@ -5,7 +5,7 @@ pipeline{
         dockerHubCreds = 'dockerhub'
         dockerImage =''
     }
-    // stages{
+    stages{
     //     stage('Code quality analysis'){
     //         steps{
     //             withSonarQubeEnv(credentialsId: 'sonar-token', installationName: 'sonar-scanner'){
