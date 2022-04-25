@@ -39,7 +39,8 @@ public class ItemsServices {
 	public Items getItemsById(int id) throws ItemsNotFoundException {
 		
 		Items i = ir.findById(id).orElseThrow(ItemsNotFoundException::new);
-		
+	
+		log.info("found by id ", i);
 		return i;
 
 	}// End getItemById()
@@ -47,6 +48,7 @@ public class ItemsServices {
 	@Transactional
 	public Items createItems(Items newItem) {
 
+		log.info("created an item ", newItem);
 		return ir.save(newItem);
 
 	}// End createItems
@@ -63,6 +65,8 @@ public class ItemsServices {
 
 		Items it = ir.findById(id).orElseThrow(IllegalArgumentException::new);
 		item.setItemId(it.getItemId());
+
+		log.debug("updating new flavor");
 		return ir.save(item);
 
 	}// End updateItems()
@@ -70,6 +74,8 @@ public class ItemsServices {
 	@Transactional
 	public void deleteItems(int id) {
 
+		log.error("deleted a item");
+		log.debug("deleting new items");
 		ir.deleteById(id);
 
 	}// End deleteItems()
