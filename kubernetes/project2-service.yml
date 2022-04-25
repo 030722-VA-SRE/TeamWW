@@ -9,5 +9,7 @@ spec:
   selector:
     app: project2-app
   ports:
-  - port: 8080
+  - name : http
+    port: 8080
     targetPort: 8080
+    protocol: TCP
